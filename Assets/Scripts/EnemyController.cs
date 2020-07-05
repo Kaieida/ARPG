@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
+    public Animator anim;
     void Start()
     {
         target = Player.Instance.transform;
@@ -34,9 +35,14 @@ public class EnemyController : MonoBehaviour
             if (hit.transform.name == "Player(Clone)")
             {
                 agent.SetDestination(target.position);
+                anim.SetFloat("MoveSpeed",agent.speed);
                 if (distance <= agent.stoppingDistance)
                 {
-                    FaceTarget();
+                    while(Enemy.Instance.health >= 1)
+                    {
+                        FaceTarget();
+                    }
+                    
                 }
             }
         } 

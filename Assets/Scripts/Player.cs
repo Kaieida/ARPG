@@ -9,6 +9,7 @@ public class Player : Characters
     public static Player Instance { get => instance; set => instance = value; }
     //public Slider slider;
     public int experience;
+    public int level;
     public HealthSystem healthSystem;
     private void Awake()
     {
@@ -28,8 +29,19 @@ public class Player : Characters
     {
         Die();
     }
-    public void ExpGain(int exp)
+    public int ExpGain(int exp)
     {
         experience += exp;
+        return level = experience / 3;
+    }
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        level = data.level;
+        experience = data.experience;
     }
 }

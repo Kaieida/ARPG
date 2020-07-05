@@ -58,8 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f43beeee26f4b40b7c58163de6e62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3167988289548100906, guid: ca8cd6bbbf6920b469bf0baeef2b51d1, type: 3}
+  enemy: {fileID: 1391888216552696, guid: 0c74bed2ad49fad4d94fca86441ad49f, type: 3}
   player: {fileID: 6708621597728847595, guid: abb382eef62f7784fae1ef286318b697, type: 3}
+  isItCity: 0
+  spawnPoint: {fileID: 0}
 --- !u!114 &1199399846733497249
 MonoBehaviour:
   m_ObjectHideFlags: 0
