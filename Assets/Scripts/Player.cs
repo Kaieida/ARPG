@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Player : Characters
@@ -11,6 +12,8 @@ public class Player : Characters
     public int experience;
     public int level;
     public HealthSystem healthSystem;
+    public Animator anim;
+    //NavMeshAgent agent;
     private void Awake()
     {
         if (instance == null)
@@ -21,6 +24,7 @@ public class Player : Characters
     void Start()
     {
         slider = GameObject.Find("Health bar").GetComponent<Slider>();
+        //agent = GetComponent<NavMeshAgent>();
         maxHealth = 5;
         health = maxHealth;
         SetMaxHealth(maxHealth);
@@ -28,6 +32,7 @@ public class Player : Characters
     void Update()
     {
         Die();
+        anim.SetFloat("MoveSpeed", GetComponent<NavMeshAgent>().speed);
     }
     public int ExpGain(int exp)
     {
