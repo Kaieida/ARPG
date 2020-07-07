@@ -419,6 +419,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   slider: {fileID: 0}
+  data: {fileID: 11400000, guid: 00781c63608271e49896b07755a67b62, type: 2}
   experience: 0
   level: 0
   healthSystem: {fileID: 0}

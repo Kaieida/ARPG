@@ -61,7 +61,7 @@ public class Cyclone : MonoBehaviour
     }
     public void StopCyclone()
     {
-        enemies.Clear();
+        //enemies.Clear();
         StopAllCoroutines();
     }
 }

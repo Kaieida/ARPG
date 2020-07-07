@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class Characters : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
+    private int health;
+    //private int maxHealth;
     public Slider slider;
-    int damage;
+    //int damage;
     public Characters()
     {
 
     }
-    public virtual void Die()
+    /*public virtual void Die()
     {
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
-    }
-    public bool DamageTaken(int damage)
+    }*/
+    public virtual bool DamageTaken(int damage)
     {
         health -= damage;
         SetHealth(health);

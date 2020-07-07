@@ -15,3 +15,5 @@ MonoBehaviour:
   enemyName: Zombie
   expWorth: 1
   maxHealth: 5
+  health: 5
+  damage: 1

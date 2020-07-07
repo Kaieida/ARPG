@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
-  public static void SavePlayer(Player player)
+  /*public static void SavePlayer(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.fun";
@@ -29,5 +29,5 @@ public static class SaveSystem
             Debug.Log("Save is not found");
             return null;
         }
-    }
+    }*/
 }

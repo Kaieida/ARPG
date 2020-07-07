@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 10f;
+    public float lookRadius = 50f;
+    [SerializeField]
     Transform target;
     NavMeshAgent agent;
     public Animator anim;
@@ -20,12 +21,6 @@ public class EnemyController : MonoBehaviour
     {
         Movement();
     }
-    void FaceTarget()
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-    }
     void Movement()
     {
         RaycastHit hit;
@@ -36,14 +31,6 @@ public class EnemyController : MonoBehaviour
             {
                 agent.SetDestination(target.position);
                 anim.SetFloat("MoveSpeed",agent.speed);
-                if (distance <= agent.stoppingDistance)
-                {
-                    while(Enemy.Instance.health >= 1)
-                    {
-                        FaceTarget();
-                    }
-                    
-                }
             }
         } 
     }

@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     }*/
     private void Update()
     {
-        //StartCoroutine(PlayerSave());
+        /*//StartCoroutine(PlayerSave());
         if (Input.GetKeyDown(KeyCode.L))
         {
             Player.Instance.LoadPlayer();
@@ -31,6 +31,6 @@ public class PlayerManager : MonoBehaviour
         {
             Player.Instance.SavePlayer();
             Debug.Log("Save complete");
-        }
+        }*/
     }
 }

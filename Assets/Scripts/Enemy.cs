@@ -7,12 +7,10 @@ public class Enemy : Characters
 {
     private static Enemy instance;
     public static Enemy Instance { get => instance; set => instance = value; }
-    [SerializeField]
     Animator animator;
     bool isAttacking = false;
-    //public int expWorth;
-    
-    public EnemyData data;
+    public EnemyData _data;
+    private EnemyData data;
 
     private void Awake()
     {
@@ -23,10 +21,10 @@ public class Enemy : Characters
     }
     void Start()
     {
-        animator = GetComponent<Animator>();
-        //data.maxHealth = 5;
-        health = data.maxHealth;
-        SetMaxHealth(health);
+        data = Instantiate(_data);
+        animator = GetComponentInChildren<Animator>();
+        data.health = data.maxHealth;
+        SetMaxHealth(data.health);
     }
     void Update()
     {
@@ -36,7 +34,7 @@ public class Enemy : Characters
     }
     void Attacking(float distance)
     {
-        if (distance <= 2)
+        if (distance <= 5)
         {
             if (!isAttacking)
                 StartCoroutine(EnemyAttack(distance));
@@ -50,22 +48,28 @@ public class Enemy : Characters
             }
         }
     }
-    public override void Die()
+    public override bool DamageTaken(int damage)
     {
-        if (health <= 0)
+        data.health -= damage;
+        SetHealth(data.health);
+        return data.health <= 0;
+    }
+    public void Die()
+    {
+        if (data.health <= 0)
         {
-            Player.Instance.ExpGain(data.expWorth);
             animator.SetTrigger("Dead");
             Destroy(this.gameObject,1.5f);
+            Player.Instance.ExpGain(data.expWorth);
         }
-        
     }
     IEnumerator EnemyAttack(float distance)
     {
         isAttacking = true;
         yield return new WaitForSeconds(1);
         animator.SetTrigger("Attack");
-        if (distance <= 2)
+        if (distance <= 4)
             Player.Instance.DamageTaken(1);
+        isAttacking = false;
     }
 }

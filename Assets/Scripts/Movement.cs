@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        cam.transform.position = agent.transform.position + new Vector3(0,45,-15);
+        cam.transform.position = agent.transform.position + new Vector3(0,30,-30);
         if (Input.GetMouseButton(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

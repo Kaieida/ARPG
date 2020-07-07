@@ -8,12 +8,8 @@ public class Player : Characters
 {
     private static Player instance;
     public static Player Instance { get => instance; set => instance = value; }
-    //public Slider slider;
-    public int experience;
-    public int level;
-    public HealthSystem healthSystem;
+    public PlayerData data;
     public Animator anim;
-    //NavMeshAgent agent;
     private void Awake()
     {
         if (instance == null)
@@ -25,21 +21,27 @@ public class Player : Characters
     {
         slider = GameObject.Find("Health bar").GetComponent<Slider>();
         //agent = GetComponent<NavMeshAgent>();
-        maxHealth = 5;
-        health = maxHealth;
-        SetMaxHealth(maxHealth);
+        //maxHealth = 5;
+        data.health = data.maxHealth;
+        SetMaxHealth(data.maxHealth);
     }
     void Update()
     {
-        Die();
+        //Die(); Right now it's useless, return this method when enemy Die(); is fixed.
         anim.SetFloat("MoveSpeed", GetComponent<NavMeshAgent>().speed);
+    }
+    public override bool DamageTaken(int damage)
+    {
+        data.health -= damage;
+        SetHealth(data.health);
+        return data.health <= 0;
     }
     public int ExpGain(int exp)
     {
-        experience += exp;
-        return level = experience / 3;
+        data.experience += exp;
+        return data.level = data.experience / 90 + 10 * data.level;
     }
-    public void SavePlayer()
+    /*public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
     }
@@ -48,5 +50,5 @@ public class Player : Characters
         PlayerData data = SaveSystem.LoadPlayer();
         level = data.level;
         experience = data.experience;
-    }
+    }*/
 }
