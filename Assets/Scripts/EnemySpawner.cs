@@ -16,8 +16,8 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(player, spawnPoint.transform.position, Quaternion.identity);
         if (!isItCity)
         {
-            /*for (int i = 0; i < 3; i++)
-                Instantiate(enemy, enemySpawnPoints[i].transform.position, Quaternion.identity);*/
+            for (int i = 0; i < 3; i++)
+                Instantiate(enemy, enemySpawnPoints[i].transform.position, Quaternion.identity);
             Instantiate(skeleton, enemySpawnPoints[4].transform.position, Quaternion.identity);
         }
     }
