@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cycloner
   m_EditorClassIdentifier: 
   playerName: Cycloner
-  experience: 1733
-  level: -1608748603
+  experience: 8
+  level: 0
   maxHealth: 5
-  health: 0
+  health: 1

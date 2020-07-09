@@ -12,12 +12,17 @@ public class CameraControll : MonoBehaviour
     }
     void Start()
     {
-        player = GetComponent<GameObject>();
-        cam = Camera.main; 
+       //player = GetComponent<GameObject>();
+       // cam = Camera.main; 
     }
 
     void Update()
     {
-        cam.transform.position = player.transform.position + new Vector3(0, 30, -30);
+        //   cam.transform.position = player.transform.position + new Vector3(0, 30, -30);
+        OnMouseOver();
+    }
+    private void OnMouseOver()
+    {
+        Debug.Log("Mouse is on " + gameObject.name);
     }
 }

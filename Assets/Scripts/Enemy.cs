@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,7 +60,7 @@ public class Enemy : Characters
         if (data.health <= 0)
         {
             animator.SetTrigger("Dead");
-            Destroy(this.gameObject,1.5f);
+            Destroy(this.gameObject);
             Player.Instance.ExpGain(data.expWorth);
         }
     }
@@ -71,5 +72,13 @@ public class Enemy : Characters
         if (distance <= 4)
             Player.Instance.DamageTaken(1);
         isAttacking = false;
+    }
+    private void OnMouseOver()
+    {
+        HealthSystem.Instance.ShowHealthSystem(data);
+    }
+    private void OnMouseExit()
+    {
+        HealthSystem.Instance.HideHealthSystem();
     }
 }

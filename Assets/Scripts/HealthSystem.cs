@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthSystem : MonoBehaviour
 {
-    public Slider slider;
-    public void SetMaxHealth(int health)
+    private static HealthSystem instance;
+    public static HealthSystem Instance { get => instance; set => instance = value; }
+
+    [SerializeField]
+    private GameObject canvasHP;
+    [SerializeField]
+    private TextMeshProUGUI canvasText;
+
+    private void Awake()
     {
-        slider.maxValue = health;
-        slider.value = health;
+        if(instance == null)
+        {
+            instance = this;
+        }
     }
-    public void SetHealth(int health)
+    public void ShowHealthSystem(EnemyData data)
     {
-        slider.value = health;
+        canvasHP.SetActive(true);
+        canvasText.text = data.enemyName;
+        canvasHP.GetComponent<Slider>().maxValue = data.maxHealth;
+        canvasHP.GetComponent<Slider>().value = data.health;
+    }
+    public void HideHealthSystem()
+    {
+        canvasHP.SetActive(false);
     }
 }
