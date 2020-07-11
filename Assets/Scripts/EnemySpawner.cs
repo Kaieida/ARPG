@@ -21,9 +21,4 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(skeleton, enemySpawnPoints[4].transform.position, Quaternion.identity);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

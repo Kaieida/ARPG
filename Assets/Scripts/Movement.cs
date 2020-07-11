@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
 {
     Camera cam;
     public NavMeshAgent agent;
+    [SerializeField]
+    Cyclone cyclone;
     private void Awake()
     {
         cam = Camera.main;
@@ -22,6 +24,7 @@ public class Movement : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 agent.SetDestination(hit.point);
+                //cyclone.anim.SetTrigger("Speed");
             }
         }
     }

@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireAbility: {fileID: 8775074766957309530, guid: dde0fea6935db0343b6b2082ab6905b0,
     type: 3}
+  fireVoidZone: {fileID: 4036244750877548063, guid: 4093c0e521770b94b884c50fb0df07ec,
+    type: 3}
 --- !u!1001 &151780080147603087
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,16 +19,16 @@ public class Player : Characters
     }
     void Start()
     {
-        slider = GameObject.Find("Health bar").GetComponent<Slider>();
+        //slider = GameObject.Find("Health bar").GetComponent<Slider>();
         //agent = GetComponent<NavMeshAgent>();
         //maxHealth = 5;
-        data.health = data.maxHealth;
-        SetMaxHealth(data.maxHealth);
+        /*data.health = data.maxHealth;
+        SetMaxHealth(data.maxHealth);*/
     }
     void Update()
     {
         //Die(); Right now it's useless, return this method when enemy Die(); is fixed.
-        anim.SetFloat("MoveSpeed", GetComponent<NavMeshAgent>().speed);
+        //anim.SetFloat("Speed", GetComponent<NavMeshAgent>().speed);
     }
     public override bool DamageTaken(int damage)
     {

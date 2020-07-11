@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Characters : MonoBehaviour
 {
     private int health;
-    //private int maxHealth;
     public Slider slider;
     //int damage;
     public Characters()

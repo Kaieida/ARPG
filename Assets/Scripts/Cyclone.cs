@@ -2,23 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Cyclone : MonoBehaviour
+public class Cyclone : Player
 {
     public List<GameObject> enemies = new List<GameObject>();
-    public GameObject player;
     void Start()
     {
+        slider = GameObject.Find("Health bar").GetComponent<Slider>();
+        data.health = data.maxHealth;
+        SetMaxHealth(data.maxHealth);
         KeybindController.Instance.AddListener(KeyCode.Q, StartCyclone, StopCyclone);
     }
     private void OnDestroy()
     {
         KeybindController.Instance.RemoveListener(KeyCode.Q, StartCyclone, StopCyclone);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,9 +33,14 @@ public class Cyclone : MonoBehaviour
     {
         while (true)
         {
-            player.transform.Rotate(new Vector3(0, 360 * Time.deltaTime * 3, 0));
+            transform.Rotate(new Vector3(0, 360 * Time.deltaTime * 3, 0));
             yield return null;
         }
+    }
+    private void Update()
+    {
+        Debug.Log(data.health);
+        anim.SetTrigger("Speed");
     }
     IEnumerator DamageWait()
     {
