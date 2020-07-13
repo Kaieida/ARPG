@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
 {
     Camera cam;
     public NavMeshAgent agent;
-    [SerializeField]
-    Cyclone cyclone;
+    /*[SerializeField]
+    Cyclone cyclone;*/
     private void Awake()
     {
         cam = Camera.main;

@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius && Physics.Raycast(transform.position, target.position - transform.position, out hit))
         {
-            if (hit.transform.name == "Player(Clone)")
+            if (hit.transform.tag == "Player")
             {
                 agent.SetDestination(target.position);
                 anim.SetFloat("MoveSpeed",agent.speed);

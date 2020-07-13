@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 125509807627787516}
   - component: {fileID: 8453652750535691667}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: Warrior
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4716255600209512397}
-  cyclone: {fileID: 7573614048105300504}
 --- !u!1001 &8612703707559882954
 PrefabInstance:
   m_ObjectHideFlags: 0
