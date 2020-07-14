@@ -6,14 +6,12 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject skeleton;
-    public GameObject player;
     [SerializeField]
     bool isItCity;
-    public GameObject spawnPoint;
     public GameObject[] enemySpawnPoints;
     void Start()
     {
-        Instantiate(player, spawnPoint.transform.position, Quaternion.identity);
+        
         if (!isItCity)
         {
             for (int i = 0; i < 3; i++)

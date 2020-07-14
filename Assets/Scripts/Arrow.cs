@@ -10,6 +10,7 @@ public class Arrow : MonoBehaviour
     Vector3 playerCord;
     private void Start()
     {
+
         rb = GetComponent<Rigidbody>();
         //CoordinateTranslation();
     }

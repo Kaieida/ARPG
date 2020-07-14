@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1199399846733497278}
   - component: {fileID: 1199399846733497248}
   - component: {fileID: 1199399846733497249}
+  - component: {fileID: 947766113}
   m_Layer: 0
   m_Name: Game manager
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5aecfd847cd644d902d155f75fc573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6708621597728847595, guid: abb382eef62f7784fae1ef286318b697, type: 3}
+  player: {fileID: 5450553434653188873, guid: a6f7807c1c88f714484d4caff02179c1, type: 3}
 --- !u!114 &1199399846733497248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,9 +60,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1391888216552696, guid: 0c74bed2ad49fad4d94fca86441ad49f, type: 3}
-  player: {fileID: 6708621597728847595, guid: abb382eef62f7784fae1ef286318b697, type: 3}
+  skeleton: {fileID: 7267687650538878055, guid: 497d9454671c9044281667c4b44750f4,
+    type: 3}
   isItCity: 0
-  spawnPoint: {fileID: 0}
+  enemySpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1199399846733497249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +82,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keybinds: 71000000
+--- !u!114 &947766113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199399846733497277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cceaf89ed2a3f4886feebb01b957b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasHP: {fileID: 0}
+  canvasText: {fileID: 0}

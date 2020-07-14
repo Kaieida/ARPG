@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Archer : Player
 {
@@ -10,6 +11,9 @@ public class Archer : Player
     private GameObject arrowCopy;
     void Start()
     {
+        slider = GameObject.Find("Health bar").GetComponent<Slider>();
+        data.health = data.maxHealth;
+        SetMaxHealth(data.maxHealth);
         //StartCoroutine(ShootArrow());
         KeybindController.Instance.AddListener(KeyCode.Q, ShootArrow, DestroyArrow);
     }

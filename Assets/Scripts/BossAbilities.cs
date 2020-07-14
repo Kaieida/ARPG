@@ -11,7 +11,7 @@ public class BossAbilities : MonoBehaviour
     GameObject fireVoidZone;
     void Start()
     {
-        player = GameObject.Find("Player(Clone)");
+        player = GameObject.FindWithTag("Player");
         StartCoroutine(FireAbility());
     }
     IEnumerator FireAbility()
