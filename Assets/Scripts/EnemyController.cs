@@ -14,24 +14,26 @@ public class EnemyController : MonoBehaviour
     {
         target = Player.Instance.transform;
         agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(EnemiesMovement());
 
     }
-    // Update is called once per frame
-    void Update()
+    IEnumerator EnemiesMovement()
+
     {
-        Movement();
-    }
-    void Movement()
-    {
-        RaycastHit hit;
-        float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= lookRadius && Physics.Raycast(transform.position, target.position - transform.position, out hit))
+        while (true)
         {
-            if (hit.transform.tag == "Player")
+            RaycastHit hit;
+            float distance = Vector3.Distance(target.position, transform.position);
+            if (distance <= lookRadius && Physics.Raycast(transform.position, target.position - transform.position, out hit))
             {
-                agent.SetDestination(target.position);
-                anim.SetFloat("MoveSpeed",agent.speed);
+                if (hit.transform.tag == "Player")
+                {
+                    agent.SetDestination(target.position);
+                    anim.SetFloat("MoveSpeed", agent.speed);
+                }
+
             }
-        } 
+            yield return null;
+        }
     }
 }

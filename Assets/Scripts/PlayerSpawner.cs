@@ -11,10 +11,4 @@ public class PlayerSpawner : MonoBehaviour
         Instantiate(player, spawnPoint.transform.position, Quaternion.identity);
         DontDestroyOnLoad(this.gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
