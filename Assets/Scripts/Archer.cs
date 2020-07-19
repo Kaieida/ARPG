@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Archer : Player
 {
     [SerializeField]
-    GameObject arrow;
+    GameObject _arrow;
     private GameObject arrowCopy;
     void Start()
     {
@@ -27,7 +27,7 @@ public class Archer : Player
     {
         if (Input.GetKeyDown(KeyCode.Q))
             {
-              GameObject arr = Instantiate(arrow, gameObject.transform.position+new Vector3(0, 3, 0)+transform.forward, transform.rotation);
+              GameObject arr = Instantiate(_arrow, gameObject.transform.position+new Vector3(0, 3, 0)+transform.forward, transform.rotation);
             arr.GetComponent<Arrow>().CoordinateTranslation(transform.forward);
             }
     }

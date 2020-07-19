@@ -17,14 +17,6 @@ public class Player : Characters
             instance = this;
         }
     }
-    void Start()
-    {
-        //slider = GameObject.Find("Health bar").GetComponent<Slider>();
-        //agent = GetComponent<NavMeshAgent>();
-        //maxHealth = 5;
-        /*data.health = data.maxHealth;
-        SetMaxHealth(data.maxHealth);*/
-    }
     void Update()
     {
         //Die(); Right now it's useless, return this method when enemy Die(); is fixed.

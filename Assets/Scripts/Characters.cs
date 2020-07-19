@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Characters : MonoBehaviour
 {
-    private int health;
+    private int _health;
     public Slider slider;
     //int damage;
     public Characters()
@@ -21,9 +21,9 @@ public class Characters : MonoBehaviour
     }*/
     public virtual bool DamageTaken(int damage)
     {
-        health -= damage;
-        SetHealth(health);
-        return health <= 0;
+        _health -= damage;
+        SetHealth(_health);
+        return _health <= 0;
     }
     public void SetMaxHealth(int health)
     {

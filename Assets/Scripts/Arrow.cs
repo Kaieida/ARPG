@@ -6,13 +6,12 @@ public class Arrow : MonoBehaviour
 {
     
     Rigidbody rb;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject _player;
     Vector3 playerCord;
     private void Start()
     {
 
         rb = GetComponent<Rigidbody>();
-        //CoordinateTranslation();
     }
     void Update()
     {

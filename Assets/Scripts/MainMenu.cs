@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField]
-    GameObject panel;
+    GameObject _panel;
     public GameObject[] playerClasses;
     public void LoadGame()
     {
@@ -16,11 +16,11 @@ public class MainMenu : MonoBehaviour
     }
     public void NewGame()
     {
-        panel.SetActive(true);
+        _panel.SetActive(true);
     }
     public void CloseTab()
     {
-        panel.SetActive(false);
+        _panel.SetActive(false);
     }
     public void WarriorSelection()
     {
